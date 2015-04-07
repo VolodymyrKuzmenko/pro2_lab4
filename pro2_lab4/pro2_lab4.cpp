@@ -64,10 +64,12 @@ int main()
 		int alfaId;
 
 		/*Копіювати MOi= MO, MRi=MR, αi = α, */
+#pragma omp atomic
+		alfaId = alfa;
+
 		omp_set_lock(&lock_Copy);
 		MRid = copyMatrix(MR);
 		Bid = copyVector(B);
-		alfaId = alfa;
 		omp_unset_lock(&lock_Copy);
 
 		/*Обчислення 1: VH = MO∙BH*/
