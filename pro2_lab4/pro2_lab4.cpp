@@ -61,7 +61,7 @@ int main()
 #pragma omp barrier
 		matrix MRid;
 		vector Bid;
-		int alfaId;
+		int alfaId=0;
 
 		/*Копіювати MOi= MO, MRi=MR, αi = α, */
 #pragma omp_atomic
